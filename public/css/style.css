@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../css/fonts/gidole-regular/gidole-regular-webfont.woff2') format('woff2'),
+         url('../css/fonts/gidole-regular/gidole-regular-webfont.woff') format('woff'),
+  }
+  
+  body {
+    font-family: 'gidole-regular', sans-serif;
+    background: #040B37;
+    color: whitesmoke;
+    line-height: 1.6;
+    text-align: justify;
+    height: 100%;
+    margin: 0;
+  }
+  
+  #logo {
+    max-width: 100%;
+    height: auto;
+    margin-top: -0px;
+    animation-name: shrink-animation;
+    animation-duration: 2s;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+  }
+  
+  .shrink-animation {
+    animation-name: shrink-animation;
+    animation-duration: 2s;
+    /*animation-delay: 2s;*/
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes shrink-animation {
+    from {
+      transform: scale(1) translateY(0);
+    }
+    to {
+      transform: scale(0.5) translateY(-50%);
+    }
+  }
+  
+  #showcase {
+    position: relative;
+    height: 100vh;
+  }
+  
+  #top-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(50% - 50px);
+    background-color: #ada4ff;
+    border-radius: 0 0 15% 15%;
+    z-index: 9998;
+    bottom: calc(-1 * var(--logo-margin-top));
+  }
+  

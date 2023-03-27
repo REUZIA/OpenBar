@@ -11,7 +11,7 @@
 <body>
   <div id="tete">
     <div id="conteneurLogo">
-      <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" style="width: 100%;height: 100%;" class="logo" alt="OpenBar_ALPHA"/>
+      <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" id="logo"   alt="OpenBar_ALPHA"/>
     </div>
   </div>
   <script>
@@ -19,48 +19,7 @@
   // Get the browser window size
   var windowWidth = window.innerWidth;
   var windowHeight = window.innerHeight;
-
-  //var hearuder
-  var conA=document.getElementById("tete");
-  var conB=document.getElementById("conteneurLogo");
-
-  //si tel
-  if (windowHeight>windowWidth) {
-    conB.style.maxHeight="350px"
-  }
-
-  var tes=100;
-  function blink(){
-      let start = Date.now();
-      let timer = setInterval(function() {
-        let timePassed = windowHeight - (Date.now() - start);
-        conA.style.height=timePassed+'px';
-        console.log(timePassed);
-        if (timePassed <15) clearInterval(timer);
-        }, 100);
-      return 0;
-  }
-
-  function move(){
-      let start = Date.now();
-      let timer = setInterval(function() {
-        let timePassed = windowHeight - (Date.now() - start);
-        conA.style.height=timePassed+'px';
-
-          
-          if (windowHeight>windowWidth) {
-            conB.style.height=tes+"%";
-            if (timePassed <250) clearInterval(timer);
-          }
-          else
-          {
-            conB.style.height=tes+"%";
-            if (timePassed <150) clearInterval(timer);
-          }
-        
-        }, 20);
-      return 0;
-  }
+  
   </script>
   
 

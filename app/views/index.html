@@ -9,20 +9,32 @@
 
 </head>
 <body>
-  <div id="tete">
-    <div id="conteneurLogo">
-      <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" id="logo"   alt="OpenBar_ALPHA"/>
+  <div id="animationTete" class="tete">
+    <div id="animationConteneurLogo" class="conteneurLogo">
+      <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA"/>
     </div>
   </div>
+
+
+
+
+
   <script>
-
-  // Get the browser window size
-  var windowWidth = window.innerWidth;
-  var windowHeight = window.innerHeight;
+    // Get the browser window size
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+    if (windowHeight>windowWidth) {//tel
+      document.getElementById("animationConteneurLogo").style.height="auto";
+      console.log("oui");
+      
+    }
+    else
+    {
+      document.getElementById("animationConteneurLogo").style.height="100%";
+      console.log("oui");
+    }
   
-  </script>
-  
-
+    </script>
 
 </body>
 </html>

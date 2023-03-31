@@ -8,33 +8,41 @@
   <link rel="stylesheet" href="../../public/css/style.css">
 
 </head>
-<body>
-  <div id="animationTete" class="tete">
-    <div id="animationConteneurLogo" class="conteneurLogo">
-      <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA"/>
+<body id="body">
+
+  <!-- <header>
+    <div id="animationTete" class="tete">
+      <div id="animationConteneurLogo" class="conteneurLogo">
+        <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA"/>
+      </div>
     </div>
-  </div>
+  </header> -->
 
+  <!-- je doit fair vraiment du js pour bien le faire => faut faire calcule  -->
 
-
-
+  <header>
+    <div class="animationTete" id="tete" style="background-color: aqua;" >
+      <div class="conteneurLogo"  id="animationConteneurLogo" style="background-color: red" >
+        <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA" style="background-color: wheat"/>
+      </div>
+    </div>
+  </header>
 
   <script>
     // Get the browser window size
     var windowWidth = window.innerWidth;
     var windowHeight = window.innerHeight;
     if (windowHeight>windowWidth) {//tel
-      document.getElementById("animationConteneurLogo").style.height="auto";
-      console.log("oui");
-      
+      document.getElementById("tete").style.height="auto";
     }
     else
     {
-      document.getElementById("animationConteneurLogo").style.height="100%";
-      console.log("oui");
+      document.getElementById("tete").style.height="100%";
     }
-  
-    </script>
+
+    document.getElementById("body").style.height=windowHeight+"px";
+
+  </script>
 
 </body>
 </html>

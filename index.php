@@ -1,3 +1,8 @@
+<?php
+header("Location: login.php");
+exit;
+?>
+
 <!DOCTYPE html>
 <html lang="fr-FR">
 <head>
@@ -5,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Landing Page</title>
-  <link rel="stylesheet" href="../../public/css/style.css">
+  <link rel="stylesheet" href="other/public/css/style.css">
 
 </head>
 <body id="body">
@@ -23,7 +28,7 @@
   <header>
     <div class="animationTete" id="tete" style="background-color: aqua;" >
       <div class="conteneurLogo"  id="animationConteneurLogo" style="background-color: red" >
-        <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA" style="background-color: wheat"/>
+        <img src="other/public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA" style="background-color: wheat"/>
       </div>
     </div>
   </header>

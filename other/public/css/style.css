@@ -187,7 +187,7 @@ header
   align-items: center;
 }
 
-.box input[type="text"],.box input[type="password"] {
+.box input[type="email"],.box input[type="password"] {
   display: block;
   padding: 14px 24px;
   padding-right: 10px;

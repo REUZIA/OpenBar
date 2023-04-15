@@ -6,16 +6,101 @@
   
 body {
   /* background-image: url("../img/OpenBar_ALPHA.png"); */
-  font-family: 'gidole-regular', sans-serif;
+  font-family: 'MyCustomFont', sans-serif;
   background: #040B37;
   color: whitesmoke;
   line-height: 1.6;
   text-align: justify;
   height: 100%;
-  margin: 0;
+  margin: 50px0px0px10px;
   padding: 0;
   width: 100%;
-  height: 1000px;
+
+}
+
+header {
+  font-family: 'gidole-regular', sans-serif;
+  background: #040B37;
+  color: whitesmoke;
+  line-height: 1.6;
+  text-align: justify;
+  padding: 0;
+  width: 100%; 
+  height: 100px;
+  margin: 10px 0px 50px 0px;
+  padding-bottom: 50px;
+}
+
+section	 {
+  
+  font-family: 'MyCustomFont', sans-serif;
+  background: #C8D5F1;
+  color: black;
+  height: 100%;
+  width: 80%;
+  height: auto;
+  margin: auto;
+  margin-top: 20px;
+  padding: 30px; 
+  border-radius: 30px;
+}
+
+#panier {
+  height: 500px;
+  background : #EEF2FC;
+  border-radius : 30px;
+  margin : 10px;
+  padding: 5px;
+}
+
+.box {
+  height : 100px;
+  background : #EEF2FC;
+  margin : 10px;
+  display: flex;
+  justify-content: space-around;
+  padding : 20px;
+  }
+
+footer {
+  font-family: 'MyCustomFont', sans-serif;
+  color : whitesmoke;
+  text-align : center;
+}
+
+#colonne-gauche {
+  width : 100px;
+  height : 100px;
+  background : #EEF2FC;
+  border : black;
+  margin : 10px;
+}
+
+#colonne-milieu {
+  width : 200px;
+  height : 100px;
+  background : #EEF2FC;
+  border : black;
+  margin : 10px;
+}
+
+#colonne-droite {
+  width : 100px;
+  height : 100px;
+  background : #EEF2FC;
+  border : black;
+  margin : 10px;
+}
+
+.button {
+  margin: auto;
+  height: 80px;
+  width: 300px;
+  background:  #FF9700;
+  text-align: center;
+  border-radius: 30px;
+  font-family: 'MyCustomFont', sans-serif;
+  font-size: 30px;
 }
 
 /* #logo {
@@ -125,7 +210,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #6078cf;
+  background-color: #040B37;
   object-fit: contain;
   animation-name: animationtete;
   animation-duration: 3s;

@@ -1,0 +1,295 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../css/fonts/gidole-regular/gidole-regular-webfont.woff2') format('woff2'),
+         url('../css/fonts/gidole-regular/gidole-regular-webfont.woff') format('woff'),
+  }
+  
+body {
+  font-family: 'gidole-regular', sans-serif;
+  background: linear-gradient(#040B37, #132067);
+  background-color: #040B37;
+  
+  /* background-image: url("../img/fondEcran.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
+
+  color: whitesmoke;
+  line-height: 1.6;
+  text-align: justify;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 1000px;
+  /* ! enlever scroll */
+  overflow: hidden;
+}
+
+a
+{
+  text-decoration: none;
+}
+
+/* #logo {
+  max-width: 100%;
+  height: auto;
+  margin-top: -0px;
+  animation-name: shrink-animation;
+  animation-duration: 2s;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.shrink-animation {
+  animation-name: shrink-animation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shrink-animation {
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+#showcase {
+  position: relative;
+  height: 100vh;
+}
+
+#top-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(50% - 50px);
+  background-color: #ada4ff;
+  border-radius: 0 0 15% 15%;
+  z-index: 9998;
+  bottom: calc(-1 * var(--logo-margin-top));
+}
+  
+#headbar {
+  position: fixed;
+  background-color: #6078cf;
+  width : 100%;
+  height: 100%;
+
+  animation-name: intro;
+  z-index: 9998;
+} */
+
+
+/* AnimationLogo  && header*/
+@keyframes animationLogo {
+  0%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+#logo
+{
+  width: 75%;
+  height: 100%;
+  /* padding-top: 20px; */
+}
+
+#conteneurLogo
+{
+  position: absolute;
+  object-fit: contain;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .animationConteneurLogo
+{
+  animation-delay: 2s;
+  animation-name: animationLogo;
+  animation-duration: 1.5s; 
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+} */
+
+@keyframes animationtete {
+  0%{
+    height: 100%;
+  } 
+  to {
+    height: 25%;
+  }
+}
+
+header
+{
+  position: absolute;
+  top: 0;
+}
+
+#tete
+{
+  position: fixed;
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #6078cf; */
+  background: none;
+}
+
+/* .animationTete
+{
+  animation-delay: 2s;
+  animation-name: animationtete;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+} */
+
+/*! login */
+
+#loginconteneur
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.box {
+  width: 254px;
+  height: 257px;
+  padding: 40px;
+  background: #cecece;
+  color: #151832;
+  border-radius: 50px;
+}
+
+.box h1 {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.box div[type="contain"]{
+  display: flex;
+  align-items: center;
+}
+
+.box input[type="email"],.box input[type="text"],.box input[type="password"] {
+  display: block;
+  padding: 14px 24px;
+  padding-right: 10px;
+  width: 200px;
+  outline: none;
+  color: #151832;
+  transition: 0.25s;
+  border: 2px solid #cecece;
+  border-radius: 24px;
+  transition: border-color 0.5s ease-in-out;
+}
+
+.soustitrelogin
+{
+  text-transform: uppercase;
+}
+
+.box div[type="item"]
+{
+  /* https://developer.mozilla.org/fr/docs/Web/CSS/position */
+  position: absolute;
+  margin-left: 195px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* quand on clique pour rentrer info */
+.box input[type="email"]:focus,
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {/* multicouleur */
+  border-color: #f79824;
+  /* https://codepen.io/HubSpot-France/pen/NWMKBMJ */
+}
+/* https://codepen.io/nickylew/pen/GYMoKM */
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+input[type="checkbox"]:hover {
+	position: fixed;
+	top: 1em;
+	left: 1em;
+}
+
+input[type="checkbox"]:after {
+	content: 'Toggle Fill';
+	white-space: nowrap;
+	padding-left: 1.5em;
+}
+
+input[type="checkbox"]:checked + div {
+	border-image-slice: 1 fill;
+}
+
+.box input[type="submit"] {
+  border: 0;
+  background-color: #f79824;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #f79824;
+  padding: 5px 69px;/*WuW*/
+  outline: none;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+  font-size: xx-large;
+  text-transform: uppercase;
+  font-family: 'gidole-regular', sans-serif;
+  color: whitesmoke;
+  line-height: 1.6;
+}
+
+.box input[type="submit"]:hover {
+  background-color: white;
+  color: #f79824;
+}
+.box div[type="end"]
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.box a[type="fp"]
+{
+  color: white;
+  font-size: larger;
+  margin-top: -10px;
+}
+.box a[type="r"]  
+{
+  color: white;
+  font-size: xx-large;
+  margin-top: 35px;
+}

@@ -1,0 +1,481 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('../css/fonts/gidole-regular/gidole-regular-webfont.woff2') format('woff2'),
+         url('../css/fonts/gidole-regular/gidole-regular-webfont.woff') format('woff'),
+  }
+  
+body {
+  font-family: 'gidole-regular', sans-serif;
+  background: linear-gradient(#040B37, #132067);
+  background-color: #040B37;
+  
+  /* background-image: url("../img/fondEcran.png");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  
+  background-attachment: fixed;
+  color: whitesmoke;
+  line-height: 1.6;
+  text-align: justify;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* ! enlever scroll */
+  /* overflow: hidden;  */
+
+  display:flex;
+  flex-direction: column;
+}
+
+a
+{
+  text-decoration: none;
+  
+}
+
+/* #logo {
+  max-width: 100%;
+  height: auto;
+  margin-top: -0px;
+  animation-name: shrink-animation;
+  animation-duration: 2s;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+}
+
+.shrink-animation {
+  animation-name: shrink-animation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shrink-animation {
+  from {
+    transform: scale(2);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+#showcase {
+  position: relative;
+  height: 100vh;
+}
+
+#top-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(50% - 50px);
+  background-color: #ada4ff;
+  border-radius: 0 0 15% 15%;
+  z-index: 9998;
+  bottom: calc(-1 * var(--logo-margin-top));
+}
+  
+#headbar {
+  position: fixed;
+  background-color: #6078cf;
+  width : 100%;
+  height: 100%;
+
+  animation-name: intro;
+  z-index: 9998;
+} */
+
+
+/* AnimationLogo  && header*/
+@keyframes animationLogo {
+  0%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+#logo
+{
+  width: 75%;
+  height: 100%;
+  /* padding-top: 20px; */
+}
+
+#conteneurLogo
+{
+  object-fit: contain;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .animationConteneurLogo
+{
+  animation-delay: 2s;
+  animation-name: animationLogo;
+  animation-duration: 1.5s; 
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+} */
+
+@keyframes animationtete {
+  0%{
+    height: 100%;
+  } 
+  to {
+    height: 25%;
+  }
+}
+
+#tete
+{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #6078cf; */
+  background: none;
+}
+
+/* .animationTete
+{
+  animation-delay: 2s;
+  animation-name: animationtete;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+} */
+
+/*! login */
+
+#conteneurPrincipal
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transition: opacity 1s;
+}
+
+.box {
+  width: 254px;
+  padding: 40px;
+  background: #cecece;
+  color: #151832;
+  border-radius: 50px;
+}
+
+.box h1 {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.box div[type="contain"]{
+  display: flex;
+  align-items: center;
+}
+
+.box input[type="email"],.box input[type="text"],.box input[type="password"] {
+  display: block;
+  padding: 14px 24px;
+  padding-right: 10px;
+  width: 200px;
+  outline: none;
+  color: #151832;
+  transition: 0.25s;
+  border: 2px solid #cecece;
+  border-radius: 24px;
+  transition: border-color 0.5s ease-in-out;
+}
+
+.soustitrelogin
+{
+  text-transform: uppercase;
+}
+
+.box div[type="item"]
+{
+  /* https://developer.mozilla.org/fr/docs/Web/CSS/position */
+  position: absolute;
+  margin-left: 195px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 2px solid #cecece;
+  border-radius: 101px;
+  padding: 8px;
+}
+
+/* quand on clique pour rentrer info */
+.box input[type="email"]:focus,
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {/* multicouleur */
+  border-color: #f79824;
+  /* https://codepen.io/HubSpot-France/pen/NWMKBMJ */
+}
+/* https://codepen.io/nickylew/pen/GYMoKM */
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+input[type="checkbox"]:hover {
+	position: fixed;
+	top: 1em;
+	left: 1em;
+}
+
+input[type="checkbox"]:after {
+	content: 'Toggle Fill';
+	white-space: nowrap;
+	padding-left: 1.5em;
+}
+
+input[type="checkbox"]:checked + div {
+	border-image-slice: 1 fill;
+}
+
+.box input[type="submit"] {
+  border: 0;
+  background-color: #f79824;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #f79824;
+  padding: 5px 69px;/*WuW*/
+  outline: none;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+  font-size: xx-large;
+  text-transform: uppercase;
+  font-family: 'gidole-regular', sans-serif;
+  color: whitesmoke;
+  line-height: 1.6;
+}
+
+.box input[type="submit"]:hover {
+  background-color: white;
+  color: #f79824;
+}
+.box div[type="end"]
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.box a[type="fp"]
+{
+  color: white;
+  font-size: larger;
+  margin-top: -10px;
+}
+.box a[type="r"]  
+{
+  color: white;
+  font-size: xx-large;
+  margin-top: 35px;
+}
+
+/* produit */
+.box a[type="product"]  
+{
+  width: 100%;
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  color: #000;
+}
+.box div[type="imgProduct"]  
+{
+  height: 100%;
+  width: 60px;
+  overflow: hidden;
+}
+
+.box div[type="containProduct"]{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border: 2px solid #cecece;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.box div[type="messageProduct"]{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 137px;
+}
+
+.box p[type="titleProduct"],.box p[type="typeProduct"]
+{
+  margin: 0px;
+}
+.box p[type="typeProduct"]
+{
+  color: #989898;
+}
+
+.box p[type="contenanceProduct"]
+{
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+}
+
+.box div[type="separateurProduct"]{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 1px;
+  background-color: #989898;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* panier */
+.box div[type="totalPayer"]{
+  position: absolute;
+  top: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 250px;
+  height: 50px;
+  background-color: #000;
+  background-color: white;
+  border: 2px solid #cecece;
+  border-radius: 20px;
+}
+
+
+.box div[type="conteneurPanier"]{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border: 2px solid #cecece;
+  border-radius: 20px;
+  padding: 8px;
+  height: 120px;
+  overflow-y: scroll;
+  margin-bottom: 50px;
+}
+
+/* produit  */
+
+.box div[type="conteneurProduit"]{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border: 2px solid #cecece;
+  border-radius: 20px;
+  padding: 8px;
+  height: 120px;
+
+  margin-bottom: 50px;
+}
+
+
+.box p[type="textbasCarte"]{
+  margin: 0px;
+  font-size: xx-large;
+}
+
+.box div[type="topCarte"]{
+  display: flex;
+  flex-direction: row;
+  font-size: xx-large;
+  width: 100%;
+  height: 200px;
+}
+
+.box div[type="imgProductPlus"]  
+{
+  height: 100%;
+  width: 90px;
+  overflow: hidden;
+}
+
+.box div[type="separateurhozitonal"]{
+  margin-top: 15px;
+  width: 1px;
+  height: 80%;
+  background-color: #989898;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.box div[type="messagePanier"]{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 137px;
+  height: 100%;
+  font-size: 20px;
+}
+
+.box div[type="bottomCarte"]{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  border: 2px solid #cecece;
+  border-radius: 20px;
+  padding: 8px;
+  height: 120px;
+
+}
+
+/* scrool bard  */
+
+#scrollbar {
+  position: absolute;
+        /* modifier c valeur pour changer position scroll */
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 2px;
+  background-color: #191515;
+  position: relative;
+}
+#scrollbar .thumb {
+  width: 20px;
+  height: 20px;
+        border-radius: 20px;
+  background-color: #000000;
+  position: absolute;
+  top: -8px;
+  left: 0;
+  cursor: pointer;
+}
+#value {
+  margin-top: 10px;
+  font-size: 24px;
+}
+

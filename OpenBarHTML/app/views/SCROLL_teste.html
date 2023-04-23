@@ -1,0 +1,166 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Example</title>
+	<style>
+		#scrollbar {
+			position: fixed;
+			right: 10px;
+			top: 10px;
+			width: 10px;
+			height: 200px;
+			background-color: #ccc;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		#scrollbar .thumb {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 10px;
+			height: 50px;
+			background-color: #999;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="scrollbar">
+		<div class="thumb"></div>
+	</div>
+	<div id="content">
+		<p>Value: <span id="value">50</span></p>
+	</div>
+	<script>
+		const scrollbar = document.getElementById("scrollbar");
+		const thumb = scrollbar.querySelector(".thumb");
+		const content = document.getElementById("content");
+		const valueSpan = document.getElementById("value");
+
+		let isDragging = false;
+
+		// Set the initial value of the scrollbar
+		let value = 50;
+		updateThumbPosition();
+
+		// Add event listeners for the thumb
+		thumb.addEventListener("mousedown", startDragging);
+		window.addEventListener("mousemove", dragThumb);
+		window.addEventListener("mouseup", stopDragging);
+
+		function startDragging(event) {
+			isDragging = true;
+			event.preventDefault();
+		}
+
+		function dragThumb(event) {
+			if (isDragging) {
+				// Get the new position of the thumb
+				let thumbY = event.clientY - scrollbar.getBoundingClientRect().top - thumb.offsetHeight / 2;
+				// Constrain the position of the thumb to the bounds of the scrollbar
+				thumbY = Math.max(0, Math.min(scrollbar.offsetHeight - thumb.offsetHeight, thumbY));
+				// Update the value and thumb position
+				value = Math.round(thumbY / (scrollbar.offsetHeight - thumb.offsetHeight) * 100);
+				updateThumbPosition();
+			}
+		}
+
+		function stopDragging(event) {
+			isDragging = false;
+		}
+
+		function updateThumbPosition() {
+			let thumbY = value / 100 * (scrollbar.offsetHeight - thumb.offsetHeight);
+			thumb.style.transform = `translateY(${thumbY}px)`;
+			valueSpan.textContent = value;
+		}
+	</script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example</title>
+	<style>
+		#scrollbar {
+			position: absolute;
+            /* modifier c valeur pour changer position scroll */
+			top: 100;
+            left: 0;
+			width: 200px;
+			height: 2px;
+			background-color: #191515;
+			position: relative;
+		}
+		#scrollbar .thumb {
+			width: 20px;
+			height: 20px;
+            border-radius: 20px;
+			background-color: #000000;
+			position: absolute;
+			top: -8px;
+			left: 0;
+			cursor: pointer;
+		}
+		#value {
+			margin-top: 10px;
+			font-size: 24px;
+		}
+	</style>
+</head>
+<body>
+	<div id="scrollbar">
+		<div class="thumb"></div>
+	</div>
+	<div id="value">Value: 1</div>
+	<script>
+		let scrollbar = document.getElementById("scrollbar");
+		let thumb = document.querySelector("#scrollbar .thumb");
+		let value = document.getElementById("value");
+
+		let valueMin = 1;
+		let valueMax = 10;
+		let thumbWidth = thumb.offsetWidth;
+		let scrollbarWidth = scrollbar.offsetWidth - thumbWidth;
+
+		thumb.addEventListener("mousedown", function(event) {
+			let thumbCoords = getCoords(thumb);
+			let shiftX = event.pageX - thumbCoords.left;
+
+			document.addEventListener("mousemove", onMouseMove);
+			document.addEventListener("mouseup", onMouseUp);
+
+			function onMouseMove(event) {
+				let newLeft = event.pageX - shiftX - scrollbar.getBoundingClientRect().left;
+				if (newLeft < 0) {
+					newLeft = 0;
+				}
+				let rightEdge = scrollbarWidth;
+				if (newLeft > rightEdge) {
+					newLeft = rightEdge;
+				}
+				let newPercent = newLeft / rightEdge;
+				let newValue = Math.round(valueMin + (valueMax - valueMin) * newPercent);
+				thumb.style.left = newLeft + "px";
+				value.textContent = "Value: " + newValue;
+			}
+
+			function onMouseUp() {
+				document.removeEventListener("mousemove", onMouseMove);
+				document.removeEventListener("mouseup", onMouseUp);
+			}
+
+			return false;
+		});
+
+		function getCoords(elem) {
+			let box = elem.getBoundingClientRect();
+			return {
+				top: box.top + pageYOffset,
+				left: box.left + pageXOffset
+			};
+		}
+	</script>
+</body>
+</html>

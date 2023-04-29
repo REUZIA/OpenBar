@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Chose</title>
-  <link rel="stylesheet" href="../../public/css/style.css">
+	<title>Panier</title>
+  <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 
-<body id="body" >
+<body id="body">
 
   <div id="tete">
     <div id="conteneurLogo">
-      <!-- <img src="../../../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA" style="background-color: wheat"/> -->
+      <!-- <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA" style="background-color: wheat"/> -->
       <svg id="logo" version="1.1" id="svg101" width="3287" height="1958" viewBox="0 0 3287 1958"
         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
         xmlns:svg="http://www.w3.org/2000/svg">
@@ -5319,11 +5319,11 @@
     <div id="conteneurPrincipal">
       <form class="box" action=".php" method="post">
           <h1 style="text-align: center;margin: -10px;">Hey <b>NAME</b> </h1>
-          <p class="soustitrelogin">Products</p>
-          <div type="containProduct">
+          <p class="soustitrelogin">Panier</p>
+          <div type="conteneurPanier" id="fortotalpayer">
             <a type="product" href="#">
               <div type="imgProduct">
-                <img src="../../public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
+                <img src="public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
               </div>
               <div type="messageProduct">
                 <p type="titleProduct">Titre</p>
@@ -5331,10 +5331,11 @@
               </div>
               <p type="contenanceProduct">33cl</p>
             </a>
-            <div type="separateurProduct"></div>
+            <!-- on doit maitre balise <p></p> car sinon sa ne veut pas s'afficher (scroll) -->
+            <div type="separateurProduct"><p></p></div>
             <a type="product" href="#">
               <div type="imgProduct">
-                <img src="../../public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
+                <img src="public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
               </div>
               <div type="messageProduct">
                 <p type="titleProduct">Titre</p>
@@ -5342,6 +5343,35 @@
               </div>
               <p type="contenanceProduct">33cl</p>
             </a>
+            <div type="separateurProduct"><p></p></div>
+            <a type="product" href="#">
+              <div type="imgProduct">
+                <img src="public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
+              </div>
+              <div type="messageProduct">
+                <p type="titleProduct">Titre</p>
+                <p type="typeProduct">Classic</p>
+              </div>
+              <p type="contenanceProduct">33cl</p>
+            </a>
+
+            <div type="separateurProduct"><p></p></div>
+            <a type="product" href="#">
+              <div type="imgProduct">
+                <img src="public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
+              </div>
+              <div type="messageProduct">
+                <p type="titleProduct">Titre</p>
+                <p type="typeProduct">Classic</p>
+              </div>
+              <p type="contenanceProduct">33cl</p>
+            </a>
+
+            <div type="totalPayer" id="totalPayer" >
+              <p style="margin-left: 15px;">Total : </p>
+              <p style="margin-right: 15px;">Prix€</p>
+            </div>
+
           </div>
           <input type="submit" id="boutonsumit" name="" value="CHEkout">            
           <div type="end" id="endpage">
@@ -5351,10 +5381,12 @@
     </div>
 
 
-    <script type="text/javascript" src="../../public/js/intro.js"></script>
+    <script type="text/javascript" src="public/js/intro.js"></script>
     <script>
-      //pour bien maitre le gris
-      appgrisfond(1);
+          
+      posabsolutotalPanier(windowHeight > windowWidth);
+      appgrisfond()
+
     </script>
 
 </body>

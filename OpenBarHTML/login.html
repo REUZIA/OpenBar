@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Element</title>
-  <link rel="stylesheet" href="../../public/css/style.css">
+	<title>Login</title>
+  <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 
-<body id="body">
+<body id="body" >
 
   <div id="tete">
     <div id="conteneurLogo">
-      <!-- <img src="../../../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA" style="background-color: wheat"/> -->
+      <!-- <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA" style="background-color: wheat"/> -->
       <svg id="logo" version="1.1" id="svg101" width="3287" height="1958" viewBox="0 0 3287 1958"
         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
         xmlns:svg="http://www.w3.org/2000/svg">
@@ -5317,88 +5317,66 @@
   </div>
     
     <div id="conteneurPrincipal">
-      <form class="box" action=".php" method="post">
-            <div type="topCarte">
-              <div type="imgProductPlus">
-                <img src="../../public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
-              </div>
-              <div type="separateurhozitonal"><p></p></div>
-              <div type="messagePanier">
-                <p type="titleProduct">Titre</p>
-                <p type="typeProduct" style="font-size: 15px;">Classic</p>
-                <p type="titleProduct">33cl</p>
-                <p type="titleProduct">1 x Cost : 1.50€</p>
-              </div>
+      <form class="box" action="login.php" method="post">
+          <h1 style="text-align: center;margin: -10px;">Login </h1>
+          <p class="soustitrelogin">Email </p>
+          <div type="contain">
+            <input id="emailid"type="email" name="email" placeholder="email" required>
+            <div type="item"  onclick="document.getElementById('emailid').value =''">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="#F79725" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6 6 18M6 6l12 12"/>
+              </svg>
             </div>
-
-          <div type="bottomCarte">
-            <p type="textbasCarte" id="valuetext">1.50 x 1</p>
-            <div id="scrollbar">
-              <div class="thumb"></div>
-            </div>
-            <p type="textbasCarte">Total :</p>
           </div>
-
-          <input type="submit" id="boutonsumit" name="" value="Confirm">            
+          <p class="soustitrelogin">Password </p>
+          <div type="contain">
+            <input type="password" id="myPsw" name="password" placeholder="password" required>
+            <div type="item" onclick="shwopsw()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3" stroke="#F79725" stroke-width="2"/>
+                <path stroke="#F79725" stroke-width="2" d="M20.188 10.934c.388.472.582.707.582 1.066 0 .359-.194.594-.582 1.066C18.768 14.79 15.636 18 12 18c-3.636 0-6.768-3.21-8.188-4.934-.388-.472-.582-.707-.582-1.066 0-.359.194-.594.582-1.066C5.232 9.21 8.364 6 12 6c3.636 0 6.768 3.21 8.188 4.934Z"/>
+              </svg>
+            </div>
+          </div>
+          <input type="submit" id="boutonsumit" name="" value="Login">            
           <div type="end" id="endpage">
-            <a href="#" type="r">BACK</a>
+            <a href="#" type="fp" >forgot password ? </a>
+            <a href="#" type="r" >Register</a>
           </div>
       </form>
     </div>
 
 
-    <script type="text/javascript" src="../../public/js/intro.js"></script>
+    <script type="text/javascript" src="public/js/intro.js"></script>
     <script>
-        
-      appgrisfond()
+      
 
-      //scroll bard
-      let scrollbar = document.getElementById("scrollbar");
-		let thumb = document.querySelector("#scrollbar .thumb");
-		let value = document.getElementById("valuetext");
+      // // ! pour maitre le login jsute après la banirre
+      // if (windowHeight<windowWidth) {//ordi
+      //   //on à + de place et le logo débort 
+      //   document.getElementById("conteneurPrincipal").style.marginTop=document.getElementById("tete").clientHeight+windowHeight/10+"px";
+      // }
+      // else
+      // {
+      //   console.log(document.getElementById("tete").clientHeight);
+      //   document.getElementById("conteneurPrincipal").style.marginTop=document.getElementById("tete").clientHeight+"px";
+      // }
 
-		let valueMin = 1;
-		let valueMax = 10;
-		let thumbWidth = thumb.offsetWidth;
-		let scrollbarWidth = scrollbar.offsetWidth - thumbWidth;
+      // scrip pour les bouton 
+      function shwopsw() {
+        var x = document.getElementById("myPsw");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+      
+      //le gris derrière
+      appgrisfond();
 
-		thumb.addEventListener("mousedown", function(event) {
-			let thumbCoords = getCoords(thumb);
-			let shiftX = event.pageX - thumbCoords.left;
-
-			document.addEventListener("mousemove", onMouseMove);
-			document.addEventListener("mouseup", onMouseUp);
-
-			function onMouseMove(event) {
-				let newLeft = event.pageX - shiftX - scrollbar.getBoundingClientRect().left;
-				if (newLeft < 0) {
-					newLeft = 0;
-				}
-				let rightEdge = scrollbarWidth;
-				if (newLeft > rightEdge) {
-					newLeft = rightEdge;
-				}
-				let newPercent = newLeft / rightEdge;
-				let newValue = Math.round(valueMin + (valueMax - valueMin) * newPercent);
-				thumb.style.left = newLeft + "px";
-				value.textContent = "1.50 x " + newValue;
-			}
-
-			function onMouseUp() {
-				document.removeEventListener("mousemove", onMouseMove);
-				document.removeEventListener("mouseup", onMouseUp);
-			}
-
-			return false;
-		});
-
-		function getCoords(elem) {
-			let box = elem.getBoundingClientRect();
-			return {
-				top: box.top + pageYOffset,
-				left: box.left + pageXOffset
-			};
-		}
+      //animation
+      att(2,document.getElementById("conteneurPrincipal"));
     </script>
 
 </body>

@@ -268,6 +268,8 @@ input[type="checkbox"]:checked + div {
   font-family: 'gidole-regular', sans-serif;
   color: whitesmoke;
   line-height: 1.6;
+  width: 100%;
+  text-align: center;
 }
 
 .box input[type="submit"]:hover {
@@ -380,7 +382,7 @@ input[type="checkbox"]:checked + div {
   border: 2px solid #cecece;
   border-radius: 20px;
   padding: 8px;
-  height: 120px;
+  height: 170px;
   overflow-y: scroll;
   margin-bottom: 50px;
 }
@@ -417,7 +419,7 @@ input[type="checkbox"]:checked + div {
 .box div[type="imgProductPlus"]  
 {
   height: 100%;
-  width: 90px;
+  width: 180px;
   overflow: hidden;
 }
 
@@ -459,8 +461,8 @@ input[type="checkbox"]:checked + div {
         /* modifier c valeur pour changer position scroll */
   top: 0;
   left: 0;
-  width: 200px;
-  height: 2px;
+  width: 234px;
+  height: 3px;
   background-color: #191515;
   position: relative;
 }

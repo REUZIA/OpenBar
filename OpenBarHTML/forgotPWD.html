@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Login</title>
-  <link rel="stylesheet" href="../../public/css/style.css">
+  <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 
@@ -5316,10 +5316,11 @@
     </div>
   </div>
     
-    <div id="conteneurPrincipal">
-      <form class="box" action="login.php" method="post">
-          <h1 style="text-align: center;margin: -10px;">Login </h1>
-          <p class="soustitrelogin">Email </p>
+    <div id="conteneurPrincipal" >
+      <form class="box" action=".php" method="post">
+          <h1 style="text-align: center;margin: -10px;">Forgot you password ?  </h1>
+          <h2 style="text-align: center;font-size: initial;">No worries ! Enter your email and we will send you a reset ling !  </h2>
+          <p class="soustitrelogin">Email</p>
           <div type="contain">
             <input id="emailid"type="email" name="email" placeholder="email" required>
             <div type="item"  onclick="document.getElementById('emailid').value =''">
@@ -5328,55 +5329,20 @@
               </svg>
             </div>
           </div>
-          <p class="soustitrelogin">Password </p>
-          <div type="contain">
-            <input type="password" id="myPsw" name="password" placeholder="password" required>
-            <div type="item" onclick="shwopsw()">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="3" stroke="#F79725" stroke-width="2"/>
-                <path stroke="#F79725" stroke-width="2" d="M20.188 10.934c.388.472.582.707.582 1.066 0 .359-.194.594-.582 1.066C18.768 14.79 15.636 18 12 18c-3.636 0-6.768-3.21-8.188-4.934-.388-.472-.582-.707-.582-1.066 0-.359.194-.594.582-1.066C5.232 9.21 8.364 6 12 6c3.636 0 6.768 3.21 8.188 4.934Z"/>
-              </svg>
-            </div>
-          </div>
           <input type="submit" id="boutonsumit" name="" value="Login">            
           <div type="end" id="endpage">
-            <a href="#" type="fp" >forgot password ? </a>
-            <a href="#" type="r" >Register</a>
+            <a href="#" type="fp">Don't have an account ? </a>
+            <a href="#" type="r">Register</a>
           </div>
       </form>
     </div>
 
 
-    <script type="text/javascript" src="../../public/js/intro.js"></script>
+    <script type="text/javascript" src="public/js/intro.js"></script>
     <script>
-      
+            //le gris derrière
+            appgrisfond();
 
-      // // ! pour maitre le login jsute après la banirre
-      // if (windowHeight<windowWidth) {//ordi
-      //   //on à + de place et le logo débort 
-      //   document.getElementById("conteneurPrincipal").style.marginTop=document.getElementById("tete").clientHeight+windowHeight/10+"px";
-      // }
-      // else
-      // {
-      //   console.log(document.getElementById("tete").clientHeight);
-      //   document.getElementById("conteneurPrincipal").style.marginTop=document.getElementById("tete").clientHeight+"px";
-      // }
-
-      // scrip pour les bouton 
-      function shwopsw() {
-        var x = document.getElementById("myPsw");
-        if (x.type === "password") {
-          x.type = "text";
-        } else {
-          x.type = "password";
-        }
-      }
-      
-      //le gris derrière
-      appgrisfond();
-
-      //animation
-      att(2,document.getElementById("conteneurPrincipal"));
     </script>
 
 </body>

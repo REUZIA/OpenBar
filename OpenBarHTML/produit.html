@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Panier</title>
-  <link rel="stylesheet" href="../../public/css/style.css">
+	<title>Element</title>
+  <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 
@@ -13,7 +13,7 @@
 
   <div id="tete">
     <div id="conteneurLogo">
-      <!-- <img src="../../../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA" style="background-color: wheat"/> -->
+      <!-- <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA" style="background-color: wheat"/> -->
       <svg id="logo" version="1.1" id="svg101" width="3287" height="1958" viewBox="0 0 3287 1958"
         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
         xmlns:svg="http://www.w3.org/2000/svg">
@@ -5318,75 +5318,91 @@
     
     <div id="conteneurPrincipal">
       <form class="box" action=".php" method="post">
-          <h1 style="text-align: center;margin: -10px;">Hey <b>NAME</b> </h1>
-          <p class="soustitrelogin">Panier</p>
-          <div type="conteneurPanier" id="fortotalpayer">
-            <a type="product" href="#">
-              <div type="imgProduct">
-                <img src="../../public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
+            <div type="topCarte">
+              <div type="imgProductPlus">
+                <img src="public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
               </div>
-              <div type="messageProduct">
+              <div type="separateurhozitonal"><p></p></div>
+              <div type="messagePanier">
                 <p type="titleProduct">Titre</p>
-                <p type="typeProduct">Classic</p>
+                <p type="typeProduct" style="font-size: 15px;">Classic</p>
+                <p type="titleProduct">33cl</p>
+                <p type="titleProduct" style="font-size: 15px;">1 x Cost : 1.5€</p>
               </div>
-              <p type="contenanceProduct">33cl</p>
-            </a>
-            <!-- on doit maitre balise <p></p> car sinon sa ne veut pas s'afficher (scroll) -->
-            <div type="separateurProduct"><p></p></div>
-            <a type="product" href="#">
-              <div type="imgProduct">
-                <img src="../../public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
-              </div>
-              <div type="messageProduct">
-                <p type="titleProduct">Titre</p>
-                <p type="typeProduct">Classic</p>
-              </div>
-              <p type="contenanceProduct">33cl</p>
-            </a>
-            <div type="separateurProduct"><p></p></div>
-            <a type="product" href="#">
-              <div type="imgProduct">
-                <img src="../../public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
-              </div>
-              <div type="messageProduct">
-                <p type="titleProduct">Titre</p>
-                <p type="typeProduct">Classic</p>
-              </div>
-              <p type="contenanceProduct">33cl</p>
-            </a>
-
-            <div type="separateurProduct"><p></p></div>
-            <a type="product" href="#">
-              <div type="imgProduct">
-                <img src="../../public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
-              </div>
-              <div type="messageProduct">
-                <p type="titleProduct">Titre</p>
-                <p type="typeProduct">Classic</p>
-              </div>
-              <p type="contenanceProduct">33cl</p>
-            </a>
-
-            <div type="totalPayer" id="totalPayer" >
-              <p style="margin-left: 15px;">Total : </p>
-              <p style="margin-right: 15px;">Prix€</p>
             </div>
 
+          <div type="bottomCarte">
+            <p type="textbasCarte" id="valuetext">1.50 x 1</p>
+            <div id="scrollbar">
+              <div class="thumb"></div>
+            </div>
+            <p type="textbasCarte" id="prixtotalcanette">Total : 1.5€</p>
           </div>
-          <input type="submit" id="boutonsumit" name="" value="CHEkout">            
+
+          <input type="submit" id="boutonsumit" name="" value="Confirm">            
           <div type="end" id="endpage">
-            <a href="#" type="r">LOG-OUT</a>
+            <a href="#" type="r">BACK</a>
           </div>
       </form>
     </div>
 
 
-    <script type="text/javascript" src="../../public/js/intro.js"></script>
+    <script type="text/javascript" src="public/js/intro.js"></script>
     <script>
-          
-      posabsolutotalPanier(windowHeight > windowWidth);
+        
       appgrisfond()
 
+      //scroll bard
+    let scrollbar = document.getElementById("scrollbar");
+		let thumb = document.querySelector("#scrollbar .thumb");
+		let value = document.getElementById("valuetext");
+		let valueTot = document.getElementById("prixtotalcanette");
+    
+
+    var prixCanette = 1.50;
+		let valueMin = 1;
+		let valueMax = 10;
+		let thumbWidth = thumb.offsetWidth;
+		let scrollbarWidth = scrollbar.offsetWidth - thumbWidth;
+
+		thumb.addEventListener("mousedown", function(event) {
+			let thumbCoords = getCoords(thumb);
+			let shiftX = event.pageX - thumbCoords.left;
+
+			document.addEventListener("mousemove", onMouseMove);
+			document.addEventListener("mouseup", onMouseUp);
+
+			function onMouseMove(event) {
+				let newLeft = event.pageX - shiftX - scrollbar.getBoundingClientRect().left;
+				if (newLeft < 0) {
+					newLeft = 0;
+				}
+				let rightEdge = scrollbarWidth;
+				if (newLeft > rightEdge) {
+					newLeft = rightEdge;
+				}
+				let newPercent = newLeft / rightEdge;
+				let newValue = Math.round(valueMin + (valueMax - valueMin) * newPercent);
+				thumb.style.left = newLeft + "px";
+				value.textContent =  prixCanette +" x " + newValue;
+        valueTot.textContent ="Total : " + prixCanette * newValue+"€";
+			}
+
+			function onMouseUp() {
+				document.removeEventListener("mousemove", onMouseMove);
+				document.removeEventListener("mouseup", onMouseUp);
+			}
+
+			return false;
+		});
+
+		function getCoords(elem) {
+			let box = elem.getBoundingClientRect();
+			return {
+				top: box.top + pageYOffset,
+				left: box.left + pageXOffset
+			};
+		}
     </script>
 
 </body>

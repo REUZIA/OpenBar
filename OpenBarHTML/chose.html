@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>FPWD</title>
-  <link rel="stylesheet" href="../../public/css/style.css">
+	<title>Chose</title>
+  <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 
@@ -13,7 +13,7 @@
 
   <div id="tete">
     <div id="conteneurLogo">
-      <!-- <img src="../../../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA" style="background-color: wheat"/> -->
+      <!-- <img src="../../public/img/OpenBar_ALPHA.png" width="5027" height="2845" class="logo"   alt="OpenBar_ALPHA" style="background-color: wheat"/> -->
       <svg id="logo" version="1.1" id="svg101" width="3287" height="1958" viewBox="0 0 3287 1958"
         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
         xmlns:svg="http://www.w3.org/2000/svg">
@@ -5316,33 +5316,45 @@
     </div>
   </div>
     
-    <div id="conteneurPrincipal" >
+    <div id="conteneurPrincipal">
       <form class="box" action=".php" method="post">
-          <h1 style="text-align: center;margin: -10px;">Forgot you password ?  </h1>
-          <h2 style="text-align: center;font-size: initial;">No worries ! Enter your email and we will send you a reset ling !  </h2>
-          <p class="soustitrelogin">Email</p>
-          <div type="contain">
-            <input id="emailid"type="email" name="email" placeholder="email" required>
-            <div type="item"  onclick="document.getElementById('emailid').value =''">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                <path stroke="#F79725" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6 6 18M6 6l12 12"/>
-              </svg>
-            </div>
+          <h1 style="text-align: center;margin: -10px;">Hey <b>NAME</b> </h1>
+          <p class="soustitrelogin">Products</p>
+          <div type="containProduct">
+            <a type="product" href="#">
+              <div type="imgProduct">
+                <img src="public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
+              </div>
+              <div type="messageProduct">
+                <p type="titleProduct">Titre</p>
+                <p type="typeProduct">Classic</p>
+              </div>
+              <p type="contenanceProduct">33cl</p>
+            </a>
+            <div type="separateurProduct"></div>
+            <a type="product" href="#">
+              <div type="imgProduct">
+                <img src="public/img/canette/coca.jpg" alt="photo produit" style="width: 100%;height: 100%;object-fit: contain;">
+              </div>
+              <div type="messageProduct">
+                <p type="titleProduct">Titre</p>
+                <p type="typeProduct">Classic</p>
+              </div>
+              <p type="contenanceProduct">33cl</p>
+            </a>
           </div>
-          <input type="submit" id="boutonsumit" name="" value="Login">            
+          <input type="submit" id="boutonsumit" name="" value="CHEkout">            
           <div type="end" id="endpage">
-            <a href="#" type="fp">Don't have an account ? </a>
-            <a href="#" type="r">Register</a>
+            <a href="#" type="r">LOG-OUT</a>
           </div>
       </form>
     </div>
 
 
-    <script type="text/javascript" src="../../public/js/intro.js"></script>
+    <script type="text/javascript" src="public/js/intro.js"></script>
     <script>
-            //le gris derrière
-            appgrisfond();
-
+      //pour bien maitre le gris
+      appgrisfond(1);
     </script>
 
 </body>

@@ -76,6 +76,10 @@ async function att(nb,baliseafficher) {//nb en seconde
         let timePassed = Date.now() - start;
         if (timePassed >= delayanimation) {
         clearInterval(timer); // finish the animation after 2 seconds
+        //on remait tout bien comme avant 
+        document.getElementById('logo').style.height = heightLogoFin;
+        document.getElementById('logo').style.width= widthLogoFin;
+        document.getElementById("tete").style.height = heightbaniereFin;
         baliseafficher.style.opacity=1;//remontrer elm
         return;
         }
@@ -125,6 +129,7 @@ async function att(nb,baliseafficher) {//nb en seconde
 
 
     // scrip pour les bouton 
+
 function shwopsw() {
     var x = document.getElementById("myPsw");
     if (x.type === "password") {

@@ -5317,11 +5317,19 @@
   </div>
     
     <div id="conteneurPrincipal">
+       <!-- 
+          form to log on the website,name:
+            post
+          ID for imput:
+            email
+            pwd
+            logon
+       -->
       <form class="box" action="login.php" method="post">
           <h1 style="text-align: center;margin: -10px;">Login </h1>
           <p class="soustitrelogin">Email </p>
           <div type="contain">
-            <input id="emailid"type="email" name="email" placeholder="email" required>
+            <input id="email"type="email" name="email" placeholder="email" required>
             <div type="item"  onclick="document.getElementById('emailid').value =''">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="#F79725" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6 6 18M6 6l12 12"/>
@@ -5330,7 +5338,7 @@
           </div>
           <p class="soustitrelogin">Password </p>
           <div type="contain">
-            <input type="password" id="myPsw" name="password" placeholder="password" required>
+            <input type="password" id="pwd" name="password" placeholder="password" required>
             <div type="item" onclick="shwopsw()">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="3" stroke="#F79725" stroke-width="2"/>
@@ -5338,10 +5346,10 @@
               </svg>
             </div>
           </div>
-          <input type="submit" id="boutonsumit" name="" value="Login">            
+          <input type="submit" id="logon" name="" value="Login">            
           <div type="end" id="endpage">
-            <a href="#" type="fp" >forgot password ? </a>
-            <a href="#" type="r" >Register</a>
+            <a href="forgotPWD.html" type="fp" >Forgot password ?</a>
+            <a href="Register.html" type="r">Register</a>
           </div>
       </form>
     </div>

@@ -149,30 +149,17 @@ function shwopsw2() {
 }
 
 //le gris derrière
-function appgrisfond(condition) {
+function appgrisfond() {
     // if (condition==1) {
-        console.log(document.getElementById("conteneurPrincipal").clientHeight);
-        document.getElementById("conteneurPrincipal").style.height=
-        document.getElementById("conteneurPrincipal").clientHeight
-        -document.getElementById("endpage").clientHeight
-        -document.getElementById("boutonsumit").clientHeight
-        // window.getComputedStyle(document.getElementById('boutonsumit')).marginTop+
-        -20 //pour le margin que j'applique à chaque foit 
+    console.log(document.getElementById("formConteneur").clientHeight);
+    document.getElementById("formConteneur").style.height=
+        document.getElementById("formConteneur").clientHeight
+        -2*parseFloat(window.getComputedStyle(document.getElementById('formConteneur')).padding) //enleève totalement le padding ajjouter pour clienHeight
+                                //recup via type
+        -2*parseFloat(window.getComputedStyle(document.querySelector('div[type="forsubmit"]')).marginTop)//enlever tout le margin
+        -((document.getElementById('boutonsumit').clientHeight)/2)// on mais la moitier du bouton
         +"px";  
-    // }
-    // else
-    // {
-    //     document.getElementById("conteneurPrincipal").style.height=
-    //     document.getElementById("conteneurPrincipal").clientHeight
-    //     -document.getElementById("endpage").clientHeight
-    //     -document.getElementById("boutonsumit").clientHeight
-    //     -document.getElementById("endpagepktuexistenooooooooooon").clientHeight*2
-    //     -20 //pour le margin que j'applique à chaque foit 
-    //     +"px";  
-    // }
-    console.log(document.getElementById("conteneurPrincipal").clientHeight);
-        
-        
+    console.log(document.getElementById("formConteneur").clientHeight);
 }
 
 function posabsolutotalPanier(istel)

@@ -161,6 +161,8 @@ a
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   transition: opacity 1s;
 }
 
@@ -183,7 +185,7 @@ a
   align-items: center;
 }
 
-.box input[type="email"],.box input[type="text"],.box input[type="password"] {
+.box input[type="entrerbox"],.box select[type="entrerbox"],.box input[type="password"] {
   display: block;
   padding: 14px 24px;
   padding-right: 10px;
@@ -216,8 +218,8 @@ a
 }
 
 /* quand on clique pour rentrer info */
-.box input[type="email"]:focus,
-.box input[type="text"]:focus,
+.box input[type="entrerbox"]:focus,
+.box input[type="entrerbox"]:focus,
 .box input[type="password"]:focus {/* multicouleur */
   border-color: #f79824;
   /* https://codepen.io/HubSpot-France/pen/NWMKBMJ */
@@ -256,7 +258,7 @@ input[type="checkbox"]:checked + div {
   border: 0;
   background-color: #f79824;
   display: block;
-  margin: 20px auto;
+  
   border: 2px solid #f79824;
   padding: 5px 69px;/*WuW*/
   outline: none;
@@ -268,28 +270,36 @@ input[type="checkbox"]:checked + div {
   font-family: 'gidole-regular', sans-serif;
   color: whitesmoke;
   line-height: 1.6;
+}
+
+.box div[type="forsubmit"]{
   width: 100%;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 35px auto;
 }
 
 .box input[type="submit"]:hover {
   background-color: white;
   color: #f79824;
 }
-.box div[type="end"]
+.pagedefin
 {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: white;
+  margin-top: 70px;
 }
-.box a[type="fp"]
+.pagedefin a[type="fp"]
 {
   color: white;
   font-size: larger;
   margin-top: -10px;
 }
-.box a[type="r"]  
+.pagedefin a[type="r"]  
 {
   color: white;
   font-size: xx-large;
@@ -403,6 +413,8 @@ input[type="checkbox"]:checked + div {
 }
 
 
+
+
 .box p[type="textbasCarte"]{
   margin: 0px;
   font-size: xx-large;
@@ -480,4 +492,3 @@ input[type="checkbox"]:checked + div {
   margin-top: 10px;
   font-size: 24px;
 }
-

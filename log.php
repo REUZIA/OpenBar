@@ -17,13 +17,13 @@ error_reporting(E_ALL);
 //-----------------------------------------------------------------------------------
 
 
-$dbhost = "localhost";
-$dbport = "5432";
-$dbname = "openbarista";
-$dbuser = "openbarista";
-$dbpass = "aEG5uXtBbywNyNn";
+$dbhost = "";
+$dbport = "";
+$dbname = "";
+$dbuser = "";
+$dbpass = "";
 
-$salt="bp48!";
+$salt="";
 
 //-----------------------------------------------------------------------------------
 //			                    Connection to the database
